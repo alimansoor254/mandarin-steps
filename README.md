@@ -1,15 +1,39 @@
 # Mandarin Steps
 
-Mandarin Steps is a small native Kotlin Android app for beginner Mandarin. It is a new implementation inspired by the Chinese Learning Application described in Ali Mansoor's résumé.
+Mandarin Steps is a native Kotlin Android app for beginner Mandarin. It pairs simplified Chinese with pinyin and English and lets you practice offline. This is a new implementation inspired by my university Chinese learning project.
 
-## Try it
+[Try a sample question](#try-a-sample-question) · [Run the app](#run-the-app) · [Explore the code](#explore-the-code)
 
-Install the accompanying debug APK on an Android 6.0 or newer test device. For source development, open this folder in Android Studio, select JDK 17 for Gradle, install Android SDK Platform 35 when prompted, and run the app module on a device or emulator. On Windows, the command-line build is `gradlew.bat assembleDebug`.
+## Try a sample question
 
-The app includes greetings, numbers, and café phrases. Each lesson shows simplified Chinese, pinyin, and English. Each quiz gives immediate feedback. A perfect score marks the lesson as mastered and saves that status on the device.
+What does **谢谢** (xièxie) mean?
 
-Lessons, quizzes, and saved progress work offline. Pronunciation uses the device's text-to-speech engine and requires an installed offline Mandarin (China) voice. Download the voice through your device's text-to-speech settings before going offline. The app requires no account or network permission.
+- A. Hello
+- B. Thank you
+- C. Goodbye
 
-## Demo walkthrough
+<details>
+<summary>Reveal the answer</summary>
 
-Open First greetings, play a phrase, and complete the quiz. Return to All lessons and confirm the mastery count increased. Close and reopen the app, then enable airplane mode and repeat a lesson to demonstrate local content, progress, and pronunciation with the voice installed.
+**B. Thank you.**
+
+</details>
+
+## What the app does
+
+- Guides you through greetings, numbers 1–4, and café phrases.
+- Plays pronunciation using an installed offline Mandarin (China) text-to-speech voice.
+- Gives immediate feedback in quizzes and saves mastery on the device after a perfect score.
+
+## Run the app
+
+Open the repository folder in Android Studio. Use JDK 17 for Gradle and install Android SDK Platform 35 if prompted. Run the app module on an Android 6.0+ device or emulator. On Windows, build with `gradlew.bat assembleDebug`.
+
+Lessons, quizzes, and saved progress work offline. To use pronunciation in airplane mode, first install an offline Mandarin (China) voice in your device's text-to-speech settings. The app requires no account or network permission.
+
+## Explore the code
+
+- [Lesson data](app/src/main/java/com/mandarinsteps/app/Lessons.kt) defines each phrase and its pinyin and English translation.
+- [Main activity](app/src/main/java/com/mandarinsteps/app/MainActivity.kt) handles lesson navigation, quiz feedback, locally saved progress, and text-to-speech.
+
+For a quick demo, open First greetings, play a phrase, and finish the quiz. Close and reopen the app in airplane mode to see that the lesson still opens and your mastery is saved.
